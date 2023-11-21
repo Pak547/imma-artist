@@ -13,7 +13,10 @@
 // WHEN I open the `logo.svg` file in a browser
 // THEN I am shown a 300x200 pixel image that matches the criteria I entered
 const fs = require('fs');
-const inquirer = require('inquirer')
+const inquirer = require('inquirer');
+const generateSVG = require('./examples/lib/generateSVG');
+const colorChoice = require('./examples/lib/colors');
+const shapeType = require('./examples/lib/shapes');
 
 const validThreeChar = (userInput) => {
     if (userInput.length > 3 || userInput.length <= 0) {
@@ -53,7 +56,7 @@ inquirer
     // write file with response
     // might need to ad toLowerCase() method
     .then((response) => {
-        fs.writeFileSync("logo.svg", generateSVG({ ...response }))
+        fs.writeFileSync("logo.svg", generateSVG({...response }))
         console.log("Generated logo.svg!")
 
     })
