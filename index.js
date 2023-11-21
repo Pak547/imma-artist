@@ -41,7 +41,7 @@ inquirer
             name: "shape",
             message: "Which shape?",
             choices: [
-                "circle", "triangle", "square"
+                "Circle", "Triangle", "Square"
             ]
         },
         {
@@ -51,6 +51,7 @@ inquirer
         },
     ])
     // write file with response
+    // might need to ad toLowerCase() method
     .then((response) => {
         fs.writeFileSync("logo.svg", generateSVG({ ...response }))
         console.log("Generated logo.svg!")
