@@ -71,3 +71,5 @@ inquirer
             // Something else went wrong
         }
     });
+
+module.exports = inquirer

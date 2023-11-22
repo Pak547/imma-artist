@@ -1,15 +1,23 @@
-const shapeType = (input) => {
-    if(input === 'Circle'){
-        return 'circle'
+class Shapes {
+    constructor(circle, triangle, square) {
+    Shapes.call(this, circle, triangle, square);
     }
-    else if (input === 'Triangle'){
-        return 'triangle'
-    } else if (input === 'Square'){
-        return 'square'
-    }else {
-        console.log("nothing??")
-        return '';
+  
+    shapeType(input) {
+        let input = toLowerCase(trim(input))
+        if(input === 'circle'){
+            return 'circle'
+        }
+        else if (input === 'triangle'){
+            return 'triangle'
+        } else if (input === 'square'){
+            return 'square'
+        }else {
+            console.log("nothing??")
+            return '';
+        }
     }
-}
+  }
+
 
 module.exports = shapeType;
