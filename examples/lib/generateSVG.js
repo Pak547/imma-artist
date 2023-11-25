@@ -1,19 +1,12 @@
-const colorChoice = require("./colors")
-const shapeType = require("./shapes")
-const inquirer
+const colorChoice = require("./colors");
+const shapeType = require("./shapes");
 
-function generateSVG() {
-    return `<svg version="1.1"
-
-    width="300" height="200"
-
- <rect width="100%" height="100%" fill="${colorChoice([color])}" />
-
- <${shapeType(shape)} cx="150" cy="100" r="80" fill="${colorChoice([shape-color])}" />
-
- <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">${[text]}</text>
-
-</svg>`
+function generateSVG(response) {
+  console.log("this is resp", response);
+  return `<svg version="1.1" width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+<${shapeType(response.shape)} fill="${colorChoice(response.color)}" />
+<text x="150" y="155" font-size="60" text-anchor="middle" fill="${colorChoice(response.shapeColor)}">${response.text}</text>
+</svg>`;
 }
 
-module.exports = generateSVG
+module.exports = generateSVG;
