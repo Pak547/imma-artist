@@ -1,3 +1,6 @@
+const colorChoice = require("./colors")
+const shapeType = require("./shapes")
+const inquirer = require("inquirer")
 const colorChoice = require("./colors");
 const shapeType = require("./shapes");
 
