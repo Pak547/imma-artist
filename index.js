@@ -57,7 +57,6 @@ inquirer
     // write file with response
     // might need to ad toLowerCase() method
     .then((response) => {
-        console.log("this is response", response);
         fs.writeFileSync("logo.svg", generateSVG(response))
         console.log("Generated logo.svg!")
     })
