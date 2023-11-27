@@ -19,8 +19,9 @@ class Shape {
 //   }
 }
 function Circle(cx, cy, r) {
-    Shape.call(this, cx, cy, r);
-    this.circle = this.circle;
+  this.cx = cx;
+  this.cy = cy;
+  this.r = r;
     this.getShape = function (){
         return `circle cx="150" cy="100" r="80"`;
     }
@@ -28,8 +29,7 @@ function Circle(cx, cy, r) {
 const newCircle = new Circle('150','100','80')
 
 function Triangle(point) {
-    Shape.call(this, point);
-    this.triangle = triangle;
+    this.point = point;
     this.getShape = function (){
         return `polygon points="150, 18 244, 182 56, 182"`
     }
@@ -37,8 +37,10 @@ function Triangle(point) {
   const newTriangle = new Triangle("150, 18 244, 182 56, 182")
 
   function Square(x, y, width, height) {
-    Shape.call(this, x, y, width, height);
-    this.square = square;
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height
     this.getShape = function (){
         return `x="90" y="40" width="120" height="120"`
     }
