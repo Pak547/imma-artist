@@ -17,6 +17,7 @@ const inquirer = require('inquirer');
 const generateSVG = require('./examples/lib/generateSVG');
 const colorChoice = require('./examples/lib/colors');
 const shapeType = require('./examples/lib/shapes');
+const { log } = require('console');
 
 const validThreeChar = (userInput) => {
     if (userInput.length > 3 || userInput.length <= 0) {
@@ -31,7 +32,7 @@ inquirer
         {
             type: "input",
             name: "text",
-            message: "Input text up to three chracters",
+            message: "Input text up to three characters",
             validate: validThreeChar
         },
         {
@@ -49,16 +50,15 @@ inquirer
         },
         {
             type: "input",
-            name: "shape-color",
+            name: "shapeColor",
             message: "What color or hexadecimal should this shape be?"
         },
     ])
     // write file with response
     // might need to ad toLowerCase() method
     .then((response) => {
-        fs.writeFileSync("logo.svg", generateSVG({...response }))
+        fs.writeFileSync("logo.svg", generateSVG(response))
         console.log("Generated logo.svg!")
-
     })
     .catch((error) => {
         if (error.isTtyError) {
