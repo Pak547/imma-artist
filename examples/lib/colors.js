@@ -10,4 +10,4 @@ const colorChoice = (color) => {
     }
 }
 
-module.exports = colorChoice;
+module.exports = colorChoice();
