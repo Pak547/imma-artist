@@ -37,10 +37,9 @@ inquirer
             message: "What color or hexadecimal should this shape be?"
         },
     ])
-    // write file with response
-    // might need to ad toLowerCase() method
-    .then((response) => {
-        fs.writeFileSync("logo.svg", generateSVG(text,color,shape, shapeColor))
+
+    .then((text, color, shape, shapeColor) => {
+        fs.writeFileSync("logo.svg", generateSVG(text, color, shape, shapeColor))
         console.log("Generated logo.svg!")
     })
     .catch((error) => {
