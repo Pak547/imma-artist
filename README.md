@@ -4,9 +4,7 @@
 
 This project incorporates inquirer and is my first time using classes and test cases highlighting the importance of Object oriented programming and test driven development. This project solves the problem of having to hire a graphic designer to get a simple SVG from code. This also shows the limitless potential that javascript can do.
 
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
