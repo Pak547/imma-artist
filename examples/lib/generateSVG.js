@@ -1,6 +1,6 @@
 const colorChoice = require('./colors.js');
 
-function generateSVG(shape, color, text, shapeColor) {
+function generateSVG(text, color, shape, shapeColor) {
   let base = `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">`;
 
   if (shape === 'circle') {
@@ -9,9 +9,9 @@ function generateSVG(shape, color, text, shapeColor) {
     base += `<polygon points="150,50 100,150 200,150" fill="${colorChoice(shapeColor)}" />`;
   } else if (shape === 'square') {
     base += `<rect x="100" y="50" width="100" height="100" fill="${colorChoice(shapeColor)}" />`;
-  }
+  } 
 
-  base += `<text x="132" y="120" fill="${color}">${text}</text></svg>`;
+  base += `<text x="132" y="120" fill="${colorChoice(color)}">${text}</text></svg>`;
 
   return base;
 }

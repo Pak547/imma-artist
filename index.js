@@ -1,6 +1,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateSVG = require('./examples/lib/generateSVG')
+const generateSVG = require('./examples/lib/generateSVG');
+const { log } = require('console');
 
 const validThreeChar = (userInput) => {
     if (userInput.length > 3 || userInput.length <= 0) {
@@ -37,10 +38,10 @@ inquirer
             message: "What color or hexadecimal should this shape be?"
         },
     ])
-    // write file with response
-    // might need to ad toLowerCase() method
-    .then((response) => {
-        fs.writeFileSync("logo.svg", generateSVG(text,color,shape, shapeColor))
+
+    .then(({text, color, shape, shapeColor}) => {
+        console.log(text,color,shape, shapeColor);
+        fs.writeFileSync("logo.svg", generateSVG(text, color, shape, shapeColor))
         console.log("Generated logo.svg!")
     })
     .catch((error) => {
