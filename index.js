@@ -1,7 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateSVG = require('./examples/lib/generateSVG');
-const { log } = require('console');
 
 const validThreeChar = (userInput) => {
     if (userInput.length > 3 || userInput.length <= 0) {
@@ -40,7 +39,6 @@ inquirer
     ])
 
     .then(({text, color, shape, shapeColor}) => {
-        console.log(text,color,shape, shapeColor);
         fs.writeFileSync("logo.svg", generateSVG(text, color, shape, shapeColor))
         console.log("Generated logo.svg!")
     })
